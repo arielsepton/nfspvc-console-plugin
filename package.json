@@ -1,12 +1,12 @@
 {
-  "name": "console-plugin-template",
+  "name": "nfspvc-console-plugin",
   "version": "0.0.1",
-  "description": "Template project for OpenShift Console plugins",
+  "description": "NfsPvc Operator Console Plugin",
   "private": true,
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openshift/console-plugin-template.git"
+    "url": "https://github.com/dana-team/nfspvc-console-plugin.git"
   },
   "scripts": {
     "clean": "rm -rf dist",
@@ -69,10 +69,10 @@
     "webpack-dev-server": "^4.7.4"
   },
   "consolePlugin": {
-    "name": "console-plugin-template",
+    "name": "nfspvc-console-plugin",
     "version": "0.0.1",
-    "displayName": "OpenShift Console Plugin Template",
-    "description": "Template project for OpenShift Console plugins. Edit package.json to change this message and the plugin name.",
+    "displayName": "NfsPvc Operator Console Plugin",
+    "description": "Project for NfsPvc OpenShift Console plugin.",
     "exposedModules": {
       "ExamplePage": "./components/ExamplePage"
     },
