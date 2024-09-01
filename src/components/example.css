@@ -5,3 +5,19 @@
    * https://patternfly-react-main.surge.sh/developer-resources/global-css-variables */
   color: var(--pf-global--palette--blue-400);
 }
+
+.container {
+  padding: 5px 0 0 20px;
+}
+
+.input {
+  padding: 0 0 0 20px;
+}
+
+.pb-1 {
+  padding: 0 0 16px 0;
+}
+
+.w-6 {
+
+}

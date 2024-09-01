@@ -3,18 +3,43 @@
     "type": "console.page/route",
     "properties": {
       "exact": true,
+      "path": "/nfspvcs",
+      "component": { "$codeRef": "NfsPvcPage" }
+    }
+  },
+  {
+    "type": "console.page/route",
+    "properties": {
+      "exact": true,
       "path": "/example",
       "component": { "$codeRef": "ExamplePage" }
     }
   },
   {
+    "type": "console.navigation/section",
+    "properties": {
+      "id": "storage-automations",
+      "name": "%plugin__console-plugin-template~Storage Automations%",
+      "perspective": "admin",
+      "position": 1000
+    }
+  },
+  {
     "type": "console.navigation/href",
     "properties": {
-      "id": "example",
-      "name": "%plugin__console-plugin-template~Plugin Example%",
-      "href": "/example",
+      "id": "storage-automations-example",
+      "name": "%plugin__console-plugin-template~NFS PVC%",
+      "href": "/nfspvcs",
       "perspective": "admin",
-      "section": "home"
+      "section": "storage-automations"
+    }
+  },
+  {
+    "type": "console.page/route",
+    "properties": {
+      "exact": true,
+      "path": "/nfspvcs/create",
+      "component": { "$codeRef": "CreateNfsPvc" }
     }
   }
 ]

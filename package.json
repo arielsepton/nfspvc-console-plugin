@@ -10,25 +10,26 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "yarn clean && NODE_ENV=production yarn webpack",
-    "build-dev": "yarn clean && yarn webpack",
-    "start": "yarn webpack serve --progress",
+    "build": "npm run clean && NODE_ENV=production npm run webpack",
+    "build-dev": "npm run clean && npm run webpack",
+    "start": "npm run webpack-serve --progress",
     "start-console": "./start-console.sh",
     "i18n": "./i18n-scripts/build-i18n.sh && node ./i18n-scripts/set-english-defaults.js",
-    "lint": "yarn eslint src integration-tests --fix && stylelint 'src/**/*.css' --allow-empty-input --fix",
+    "lint": "npm run eslint && stylelint 'src/**/*.css' --allow-empty-input --fix",
     "test-cypress": "cd integration-tests && cypress open",
     "test-cypress-headless": "cd integration-tests && node --max-old-space-size=4096 ../node_modules/.bin/cypress run --browser ${BRIDGE_E2E_BROWSER_NAME:=electron}",
     "cypress-merge": "mochawesome-merge ./integration-tests/screenshots/cypress_report*.json > ./integration-tests/screenshots/cypress.json",
     "cypress-generate": "marge -o ./integration-tests/screenshots/ -f cypress-report -t 'OpenShift Console Plugin Template Cypress Test Results' -p 'OpenShift Cypress Plugin Template Test Results' --showPassed false --assetsDir ./integration-tests/screenshots/cypress/assets ./integration-tests/screenshots/cypress.json",
-    "cypress-postreport": "yarn cypress-merge && yarn cypress-generate",
-    "webpack": "node -r ts-node/register ./node_modules/.bin/webpack"
+    "cypress-postreport": "npm run cypress-merge && npm run cypress-generate",
+    "webpack": "node -r ts-node/register ./node_modules/.bin/webpack",
+    "webpack-serve": "webpack serve"
   },
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^5.15.5",
     "@openshift-console/dynamic-plugin-sdk": "1.4.0",
     "@openshift-console/dynamic-plugin-sdk-webpack": "1.1.1",
-    "@patternfly/react-core": "^5.1.1",
-    "@patternfly/react-icons": "^5.1.1",
+    "@patternfly/react-core": "^5.4.0",
+    "@patternfly/react-icons": "^5.4.0",
     "@patternfly/react-styles": "^5.1.1",
     "@types/node": "^18.0.0",
     "@types/react": "^17.0.37",
@@ -74,7 +75,9 @@
     "displayName": "NfsPvc Operator Console Plugin",
     "description": "Project for NfsPvc OpenShift Console plugin.",
     "exposedModules": {
-      "ExamplePage": "./components/ExamplePage"
+      "ExamplePage": "./components/ExamplePage",
+      "CreateNfsPvc": "./components/CreateNfsPvc",
+      "NfsPvcPage": "./components/NfsPvcPage"
     },
     "dependencies": {
       "@console/pluginAPI": "*"
